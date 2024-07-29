@@ -21,8 +21,8 @@ This project automates the process of fetching weekly events from multiple Googl
 1. **Clone the repository:**
    ```
    bash
-   git clone https://github.com/your-username/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/damonDevelops/Weekly-Google-Calendar-Email-Automation
+   cd Weekly-Google-Calendar-Email-Automation
 
 2. Create and activate a virtual environment (optional but recommended):
 python3 -m venv venv
@@ -31,25 +31,27 @@ source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
 3. Install the required dependencies:
 pip install -r requirements.txt
 
-4. Set up environment variables:
-   * Create a .env file in the root directory of your project.
-   * Add the following lines with your details:
+1. Add variables:
+   * Update the following variables with your details:
     ```
     EMAIL_ADDRESS=your-email@gmail.com
     EMAIL_PASSWORD=your-app-specific-password
+    CALENDARS    
     ```
 
-5. Obtain Google API credentials:
+2. Obtain Google API credentials:
    * Download the credentials.json file from your Google Cloud Project.
    * Place it in the root directory of your project.
 
 ### Usage
-To run the script and send the weekly summary email:
-```python main.py```
+To run the script:
+```functions-framework --target handle_request```
+To send the email:
+   * Click on the URL in the terminal or paste in browser.
 
 ### Deployment on Google Cloud Functions
 1. Deploy the function:
-```gcloud functions deploy sendCalendarSummary --runtime python39 --trigger-http --allow-unauthenticated --entry-point main```
+   * Plenty of guides online for this, I uploaded my token, credentials and python file as a zip
 
 2. Set up Cloud Scheduler to trigger the function weekly:
    * Use the GCP Console to create a Cloud Scheduler job.
